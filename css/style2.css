@@ -1,0 +1,58 @@
+﻿body {
+    font-family: Arial, sans-serif;
+    background-color: #eef3f8;
+}
+
+/* khung form */
+form {
+    width: 320px;
+    margin: 100px auto; /* căn giữa */
+    padding: 20px;
+    border: 1px solid #3b82f6;
+    background: #fff;
+    border-radius: 8px;
+}
+
+/* tiêu đề */
+h3 {
+    text-align: center;
+    margin-bottom: 15px;
+    color: #1f2937;
+}
+
+/* label + input */
+label {
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* nút */
+input[type="submit"],
+input[type="reset"] {
+    width: 48%;
+    padding: 8px;
+    margin-top: 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* đăng nhập */
+input[type="submit"] {
+    background-color: #3b82f6;
+    color: white;
+}
+
+/* hủy */
+input[type="reset"] {
+    background-color: #e5e7eb;
+}

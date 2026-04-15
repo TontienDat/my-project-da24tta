@@ -1,0 +1,48 @@
+﻿body {
+    font-family: Arial, sans-serif;
+    background-color: #f1f5f9; /* nền xám xanh nhạt */
+    margin: 20px;
+}
+
+.container {
+    border: 2px solid #0ea5e9; /* xanh dương tươi */
+    padding: 15px;
+    background: #ffffff;
+}
+
+h1 {
+    margin-bottom: 5px;
+    color: #0f172a; /* xanh đậm */
+}
+
+.profile {
+    display: flex;
+    border: 1px solid #bae6fd; /* xanh nhạt */
+    padding: 10px;
+    margin-bottom: 15px;
+    background: #f0f9ff; /* xanh rất nhạt */
+}
+
+.profile img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    margin-right: 15px;
+    border: 2px solid #0ea5e9;
+}
+
+table {
+    border-collapse: collapse;
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+table, th, td {
+    border: 1px solid #0ea5e9; /* xanh dương */
+    padding: 6px;
+}
+
+th {
+    background-color: #0ea5e9;
+    color: white;
+}
