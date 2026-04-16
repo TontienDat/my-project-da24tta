@@ -1,48 +1,79 @@
-﻿body {
-    font-family: Arial, sans-serif;
-    background-color: #f1f5f9; /* nền xám xanh nhạt */
+﻿/* Tổng thể trang */
+body {
+    font-family: Arial, Helvetica, sans-serif; /* Font không chân giống trong ảnh */
     margin: 20px;
 }
 
+/* Khung viền đen bao ngoài cùng */
 .container {
-    border: 2px solid #0ea5e9; /* xanh dương tươi */
-    padding: 15px;
-    background: #ffffff;
+    border: 1px solid black;
+    padding: 20px;
+    width: 95%;
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
+/* Tên và tiêu đề */
 h1 {
-    margin-bottom: 5px;
-    color: #0f172a; /* xanh đậm */
+    margin: 0;
+    font-size: 24px;
 }
 
+h3 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/* Khung giới thiệu bản thân */
 .profile {
+    border: 1px solid black;
     display: flex;
-    border: 1px solid #bae6fd; /* xanh nhạt */
     padding: 10px;
-    margin-bottom: 15px;
-    background: #f0f9ff; /* xanh rất nhạt */
+    margin-top: 15px;
+    margin-bottom: 20px;
 }
 
 .profile img {
-    width: 120px;
-    height: 120px;
+    width: 90px;
+    height: 110px;
     object-fit: cover;
     margin-right: 15px;
-    border: 2px solid #0ea5e9;
 }
 
+.profile h3 {
+    margin-top: 0;
+    font-size: 18px;
+}
+
+/* Bảng thông tin chi tiết (Lưu ý: Bảng này nhỏ và sát lề) */
 table {
     border-collapse: collapse;
-    margin-bottom: 15px;
-    width: 100%;
+    width: 250px; /* Độ rộng nhỏ giống trong ảnh */
+    margin-bottom: 20px;
 }
 
 table, th, td {
-    border: 1px solid #0ea5e9; /* xanh dương */
-    padding: 6px;
+    border: 1px solid black;
 }
 
-th {
-    background-color: #0ea5e9;
-    color: white;
+th, td {
+    padding: 3px 8px;
+    text-align: left;
+    font-weight: normal;
+}
+
+/* Danh sách sở thích và kỹ năng */
+ul, ol {
+    margin-top: 5px;
+    padding-left: 35px;
+}
+
+li {
+    margin-bottom: 3px;
+}
+
+/* Link liên hệ */
+a {
+    color: blue;
+    text-decoration: underline;
 }

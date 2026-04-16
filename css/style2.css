@@ -1,58 +1,60 @@
-﻿body {
+﻿/* Nền gradient giống ảnh */
+body {
+    margin: 0;
     font-family: Arial, sans-serif;
-    background-color: #eef3f8;
+    background: linear-gradient(135deg, #1e90ff, #00c6ff);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
-/* khung form */
-form {
+/* Khung form */
+.container {
+    background: #f2f2f2;
+    padding: 30px;
+    border-radius: 25px;
     width: 320px;
-    margin: 100px auto; /* căn giữa */
-    padding: 20px;
-    border: 1px solid #3b82f6;
-    background: #fff;
-    border-radius: 8px;
+
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
 }
 
-/* tiêu đề */
-h3 {
+/* Tiêu đề */
+#title {
     text-align: center;
+    color: #1e40ff;
+    margin-bottom: 20px;
+}
+
+/* Nhóm input */
+.form-group {
     margin-bottom: 15px;
-    color: #1f2937;
 }
 
-/* label + input */
-label {
+/* Label */
+.form-group label {
     display: block;
-    margin-top: 10px;
     margin-bottom: 5px;
+    font-size: 14px;
 }
 
-input[type="text"],
-input[type="password"] {
+/* Input */
+.form-control {
     width: 100%;
-    padding: 8px;
+    padding: 10px;
+    border-radius: 10px;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    outline: none;
 }
 
-/* nút */
-input[type="submit"],
-input[type="reset"] {
+/* Khi focus */
+.form-control:focus {
+    border: 1px solid #1e90ff;
+}
+
+/* Nút */
+.button {
     width: 48%;
-    padding: 8px;
-    margin-top: 12px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-/* đăng nhập */
-input[type="submit"] {
-    background-color: #3b82f6;
-    color: white;
-}
-
-/* hủy */
-input[type="reset"] {
-    background-color: #e5e7eb;
+    padding: 
 }

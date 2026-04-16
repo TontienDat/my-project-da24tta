@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Đăng ký thành viên</title>
+    <link rel="stylesheet" href="../css/style3.css">
+</head>
+<body>
+
+<div class="container">
+    <h2>ĐĂNG KÝ THÀNH VIÊN</h2>
+
+    <form>
+        <!-- Họ tên + MSSV -->
+        <div class="row">
+            <label>Họ tên:</label>
+            <input type="text" placeholder="Nhập họ tên">
+            
+            <label>MSSV:</label>
+            <input type="text" placeholder="Nhập MSSV" pattern="[0-9]{8}">
+        </div>
+
+        <!-- Mã lớp -->
+        <div class="row">
+            <label>Mã lớp:</label>
+            <select>
+                <option>-- Chọn lớp --</option>
+                <option>DA24TTA</option>
+                <option>DA24TTB</option>
+                <option>DA24TTC</option>
+                <option>DA24TTD</option>
+            </select>
+        </div>
+
+        <!-- Giới tính -->
+        <div class="row">
+            <label>Giới tính:</label>
+            <input type="radio" name="gender"> Nam
+            <input type="radio" name="gender"> Nữ
+        </div>
+
+        <!-- Điểm môn -->
+        <div class="row">
+            <label>Điểm mạnh:</label>
+            <input type="checkbox"> Thiết Kế Web
+            <input type="checkbox"> Kỹ thuật lập trình
+            <input type="checkbox"> Anh văn chuyên ngành
+        </div>
+
+        <!-- Nội dung -->
+        <div class="row">
+            <label>Nội dung giới thiệu:</label><br>
+            <textarea rows="4" placeholder="Nhập nội dung..."></textarea>
+        </div>
+
+        <!-- Button -->
+        <div class="buttons">
+            <button type="submit">Đăng ký</button>
+            <button type="reset">Nhập lại</button>
+        </div>
+    </form>
+</div>
+
+</body>
+</html>
