@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Hóa đơn học phí</title>
+</head>
+<body>
+
+<h2>HÓA ĐƠN HỌC PHÍ</h2>
+
+<button onclick="hienBang()">Hiện bảng</button>
+<button onclick="anBang()">Ẩn bảng</button>
+
+<div id="container"></div>
+
+<script>
+    function hienBang() {
+        // Mỗi lần bấm sẽ tạo thêm 1 dòng "hehe"
+        const myRow = document.createElement("div");
+        myRow.setAttribute("class","row");
+        const myText = document.createTextNode("hehe");
+        myRow.appendChild(myText);
+        
+        // Đẩy vào container đã tạo ở trên
+        document.getElementById("container").appendChild(myRow);
+    }
+
+    function anBang() {
+        // Xóa sạch nội dung trong container
+        document.getElementById("container").innerHTML = "";
+    }
+</script>
+
+</body>
+</html>
