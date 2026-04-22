@@ -18,12 +18,12 @@ function inBBC() {
     let kq = "";
     // kiểm tra dữ liệu nhập
     if (isNaN(num) || num < 1 || num > 9) {
-        document.getElementById("output").innerHTML = "Vui lòng nhập số từ 1 đến 9!";
+        document.getElementById("output").innerHTML = "olala Đừng Mà";
         return;
     }
     // tạo bảng cửu chương
     for (let i = 1; i <= 10; i++) {
-        kq += num + " × " + i + " = " + (num * i) + "<br>";
+        kq += num + " * " + i + " = " + (num * i) + "<br>";
     }
     document.getElementById("output").innerHTML = kq;
 }
