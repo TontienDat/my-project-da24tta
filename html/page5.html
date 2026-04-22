@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8">
+    <title>Bảng Cửu Chương</title>
+    <link rel="stylesheet" href="../css/style5.css">
+</head>
+<body>
+<h2>BẢNG CỬU CHƯƠNG</h2>
+     <input type="number" id="so" placeholder="Nhập số 1 - 9">
+<button type="button" onclick="inBBC()">
+    In bảng cửu chương
+</button>
+<div id="output"></div>
+<script>
+function inBBC() {
+    let num = parseInt(document.getElementById("so").value);
+    let kq = "";
+    // kiểm tra dữ liệu nhập
+    if (isNaN(num) || num < 1 || num > 9) {
+        document.getElementById("output").innerHTML = "Vui lòng nhập số từ 1 đến 9!";
+        return;
+    }
+    // tạo bảng cửu chương
+    for (let i = 1; i <= 10; i++) {
+        kq += num + " × " + i + " = " + (num * i) + "<br>";
+    }
+    document.getElementById("output").innerHTML = kq;
+}
+</script>
+
+</body>
+</html>
