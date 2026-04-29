@@ -2,32 +2,124 @@
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <title>Hóa đơn học phí</title>
+    <title>Danh sách môn học</title>
+    <style>
+        #input-row {
+            margin: 10px 0;
+            display: flex;
+            gap: 5px;
+        }
+        input {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        table {
+            border-collapse: collapse;
+            margin-top: 15px;
+            width: 100%;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .tong-row {
+            font-weight: bold;
+            background-color: #fff9c4; /* Màu vàng nhạt cho hàng tổng */
+        }
+    </style>
 </head>
 <body>
 
-<h2>HÓA ĐƠN HỌC PHÍ</h2>
+<h2>DANH SÁCH MÔN HỌC</h2>
 
-<button onclick="hienBang()">Hiện bảng</button>
-<button onclick="anBang()">Ẩn bảng</button>
+<button onclick="hienBang()">Hiện bảng nhập liệu</button>
 
 <div id="container"></div>
 
 <script>
-    function hienBang() {
-        // Mỗi lần bấm sẽ tạo thêm 1 dòng "hehe"
-        const myRow = document.createElement("div");
-        myRow.setAttribute("class","row");
-        const myText = document.createTextNode("hehe");
-        myRow.appendChild(myText);
-        
-        // Đẩy vào container đã tạo ở trên
-        document.getElementById("container").appendChild(myRow);
-    }
+    let table;
+    let totalTinChi = 0;
+    let footerRow;
 
-    function anBang() {
-        // Xóa sạch nội dung trong container
-        document.getElementById("container").innerHTML = "";
+    function hienBang() {
+        const container = document.getElementById("container");
+        if (container.childNodes.length > 0) return;
+
+        // ===== HÀNG NHẬP LIỆU (CHỈ CÓ 3 Ô) =====
+        const inputRow = document.createElement("div");
+        inputRow.id = "input-row";
+
+        const inputMa = document.createElement("input");
+        inputMa.placeholder = "Mã môn học";
+
+        const inputTen = document.createElement("input");
+        inputTen.placeholder = "Tên môn học";
+
+        const inputTinChi = document.createElement("input");
+        inputTinChi.placeholder = "Số tín chỉ";
+        inputTinChi.type = "number";
+
+        inputRow.appendChild(inputMa);
+        inputRow.appendChild(inputTen);
+        inputRow.appendChild(inputTinChi);
+
+        // ===== TẠO BẢNG =====
+        table = document.createElement("table");
+        table.setAttribute("border", "1");
+        table.setAttribute("cellpadding", "10");
+
+        const headerRow = document.createElement("tr");
+        ["Mã môn", "Tên môn", "Số tín chỉ"].forEach(text => {
+            const th = document.createElement("th");
+            th.innerText = text;
+            headerRow.appendChild(th);
+        });
+        table.appendChild(headerRow);
+
+        // Hàng tổng cộng
+        footerRow = document.createElement("tr");
+        footerRow.className = "tong-row";
+        footerRow.innerHTML = `<td colspan="2" style="text-align: right;">Tổng số tín chỉ:</td><td id="tong-so">0</td>`;
+        table.appendChild(footerRow);
+
+        // ===== XỬ LÝ THÊM DỮ LIỆU =====
+        const handleAdd = () => {
+            const ma = inputMa.value.trim();
+            const ten = inputTen.value.trim();
+            const tinchi = parseInt(inputTinChi.value);
+
+            if (ma !== "" && ten !== "" && !isNaN(tinchi)) {
+                const row = document.createElement("tr");
+                
+                [ma, ten, tinchi].forEach(val => {
+                    const td = document.createElement("td");
+                    td.innerText = val;
+                    row.appendChild(td);
+                });
+
+                // Chèn vào trước hàng tổng
+                table.insertBefore(row, footerRow);
+
+                // Cập nhật tổng
+                totalTinChi += tinchi;
+                document.getElementById("tong-so").innerText = totalTinChi;
+
+                // Xóa nội dung để nhập tiếp
+                inputMa.value = "";
+                inputTen.value = "";
+                inputTinChi.value = "";
+                inputMa.focus(); // Quay lại ô đầu tiên
+            }
+        };
+
+        // Nhấn Enter ở bất kỳ ô nào cũng sẽ thêm
+        [inputMa, inputTen, inputTinChi].forEach(input => {
+            input.onkeypress = (e) => { if(e.key === 'Enter') handleAdd(); };
+        });
+
+        // Hiển thị
+        container.appendChild(inputRow);
+        container.appendChild(table);
     }
 </script>
 
