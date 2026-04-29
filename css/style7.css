@@ -1,0 +1,9 @@
+﻿.product-item {
+  width: 200px;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+.product-image img {
+  width: 100%;
+}
